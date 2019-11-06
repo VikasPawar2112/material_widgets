@@ -246,7 +246,8 @@ class MaterialWidgetStateDemo extends State<MaterialWidgetDemo> {
                 accountName: Text("Vikas Pawar"),
                 accountEmail: Text("vikaspawar2112@gmail.com"),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: NetworkImage('https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg'),
+                  backgroundImage: NetworkImage(
+                      'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg'),
                   foregroundColor: Colors.pink,
                   backgroundColor:
                       Theme.of(context).platform == TargetPlatform.iOS
@@ -256,7 +257,7 @@ class MaterialWidgetStateDemo extends State<MaterialWidgetDemo> {
                     "A",
                     style: TextStyle(fontSize: 40.0),
                   ),
-                /*  child: ClipOval(
+                  /*  child: ClipOval(
                     child: Image.network(
                       'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg',
                     ),
@@ -347,6 +348,37 @@ class MaterialWidgetStateDemo extends State<MaterialWidgetDemo> {
             ],
           ),
         ),
+        drawerScrimColor: Colors.deepOrangeAccent,
+//        backgroundColor: Colors.white,
+//      drawerEdgeDragWidth: 100,
+        drawerDragStartBehavior: DragStartBehavior.down,
+//        endDrawer: Drawer(),
+        bottomSheet: Container(
+          child: Wrap(
+            children: <Widget>[
+              ListTile(
+                  leading: Icon(Icons.music_note),
+                  title: Text('Music'),
+                  onTap: () => {}),
+              ListTile(
+                leading: Icon(Icons.videocam),
+                title: Text('Video'),
+                onTap: () => {},
+              ),
+              ListTile(
+                leading: Icon(Icons.movie),
+                title: Text('Movie'),
+                onTap: () => {},
+              ),
+            ],
+          ),
+        ),
+        resizeToAvoidBottomInset: true,
+        resizeToAvoidBottomPadding: true,
+        persistentFooterButtons: <Widget>[
+          Icon(Icons.apps),
+          Icon(Icons.more_horiz)
+        ],
       ),
     );
   }
